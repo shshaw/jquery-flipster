@@ -1,0 +1,58 @@
+body { margin: 0; padding: 0; }
+
+.Container { 
+//	width: 800px;
+	margin: 0 auto;
+	padding: 0; //@baseLineHeight;
+}
+.Text-Left { text-align: left; }
+.Text-Right { text-align: right; }
+.Text-Center { text-align: center; }
+
+.Float-Left {
+	float: left;
+	margin-right: @baseLineHeight;
+}
+.Float-Right {
+	float: right;
+	margin-left: @baseLineHeight;
+}
+
+.Button {
+	display: inline-block;
+	padding: @baseLineHeight;
+	margin: 0;
+	background-color: @accent;
+	background-position: center center;
+	background-repeat: no-repeat;
+	color: darken(@accent,20%);//@white;
+	text-shadow: none;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 0;
+	.transition(color 300ms ease, background-color 300ms ease;);
+	
+	&:hover,
+	&:focus {
+		color: darken(@accent,20%);
+		background: @accentLight;
+		//text-shadow: 1px 1px 0 fade(@black,30%);
+	}
+	
+	&.Small { 
+		padding: 5px 10px;
+		font-size: small;
+	}
+	
+	&.Block {
+		padding: @baseLineHeight @baseLineHeight*2;
+		width: 300px;
+		height: 200px;
+	}
+	
+	h1 { 
+		font-size: 2em;
+		line-height: 1.25em;
+		color: #FFF;
+	}
+}

@@ -1,0 +1,135 @@
+@import "lesshat";
+@import "../_base/_variables";
+
+	@navBg: @red; //black;
+	@navHeight: 25px;
+	@subHeight: 32px;
+	@borderWidth: 2px;
+	@borderColor: @red;
+	@catBg: @white;
+	@catText: @white;
+	@catSelectText: @black;
+	@itemLink: @red;
+	
+	/* @group flipster Navigation */
+	
+	.flipster .flipster-nav {
+		display: block;
+//		width: 540px;
+		background: @navBg;
+		height: @navHeight;
+		font-size: 0.0px;
+		margin: 0;
+		padding: 5px 5px 0;
+		text-align: justify;
+		margin-bottom: @subHeight + @baseLineHeight;
+		position: relative;
+		border-bottom: solid @borderWidth @borderColor; //@accent;
+		list-style-type: none;
+		
+		&:after{
+			content: '';
+			display: inline-block;
+			width: 100%;
+		}
+		
+		li { 
+			display: inline-block;
+			font-size: @baseFontSize;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+		
+		.flip-nav-category,
+		.no-category { width: 25%; }
+		
+		.flip-nav-category-link,
+		.flip-nav-item-link {
+			display: block;
+			.transition(all 100ms ease);
+		}
+		
+		.flip-nav-category-link,
+		.no-category .flip-nav-item-link {
+			border: solid @borderWidth transparent;
+			height: @navHeight - @borderWidth;
+			line-height: @navHeight;
+			color: @catText;
+			padding: 1px 7px;
+//			.opacity(60);
+			font-size: 0.8em;
+		}
+		.flip-nav-current .flip-nav-category-link,
+		.no-category .flip-nav-current.flip-nav-item-link {
+			border-color: @borderColor;
+			border-bottom: none;
+			background: @catBg;
+			color: @catSelectText;
+//			.opacity(100);
+		}
+		
+		.flip-nav-category .flip-nav-items {
+			display: none;
+			position: absolute;
+			top: @navHeight + @borderWidth;
+			left: 0;
+			right: 0;
+			text-align: center;
+			padding: 10px 0;
+			height: @subHeight;
+			
+			&:after{
+			content: '';
+			display: inline-block;
+			width: 100%;
+			}
+			
+			.flip-nav-item-link {
+				padding: 5px 15px;
+				color: @itemLink;
+				font-family: Helvetica;
+				text-transform: uppercase;
+				font-size: 16px;
+				&.flip-nav-current {
+					background: @itemLink;
+					color: #FFF;
+				}
+			}
+		}
+		
+		.flip-nav-category.flip-nav-current .flip-nav-items {
+			display: block;
+		}
+	}
+	
+	/* @end */
+	
+	////////////////////////////////////////
+	
+	/* @group Previous & Next Buttons */
+	
+	.flipster .flipto-prev,
+	.flipster .flipto-next {
+		position: absolute;
+		top: 50%;
+		z-index: 999;
+		display: block;
+		padding: 10px;
+		margin-top: @navHeight;
+		background-color: @accent;
+		color: #FFF;
+		border: solid @borderWidth @accent;
+		.transition(background-color 300ms ease);
+		
+		&:hover { 
+			background-color: #FFF;
+			color: @accent;
+		}
+	}
+	
+	.flipster .flipto-prev { left: 0; }
+	.flipster .flipto-next { right: 0; }
+	
+	/* @end */

@@ -1,0 +1,39 @@
+// Colors
+// -------------------------
+
+@accent: @red; //@tan;
+@accentDark: darken(@accent,10%); //@tanDark;
+@accentLight: lighten(@accent,10%);
+
+
+@black:                 #000;
+@grayDarker:            #2e2e2e;
+@grayDark:              #333;
+@gray:                  #575757;
+@grayLight:             #8d8d8d;
+@grayLighter:           #c1c2bc;
+@white:                 #fff;
+@red:                   #DA0D25;
+
+
+@textColor:             @grayDark;
+@linkColor:             @accent;
+@linkColorHover:        @accentLight;
+
+
+// Typography
+// -------------------------
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@baseFontSize:          15px;
+@baseFontFamily:        @sansFontFamily;
+@baseFontWeight:				400;
+@boldFontWeight:				600;
+@baseLineHeight:        20px;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    @sansFontFamily; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    500; // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
